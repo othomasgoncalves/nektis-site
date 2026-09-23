@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* clip, não hidden: overflow-x:hidden no html/body quebra position:sticky
+   no Chromium (o elemento sticky para de "grudar" e volta a rolar normal). */
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+  background: #ffffff;
+  color: #3e1c59;
+  font-family: var(--font-satoshi), Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-unbounded), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Alvo de foco visível — acessibilidade de teclado em toda a página. */
+:focus-visible {
+  outline: 2px solid #3e1c59;
+  outline-offset: 3px;
+}
